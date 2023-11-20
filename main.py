@@ -6,7 +6,7 @@ while True:
     user_action = user_action.strip()
 
     # Depeding on user choice add, show or exit program
-    if 'add' in user_action:
+    if 'add' in user_action or 'new' in user_action:
             todo = user_action[4:]
 
             with open('todos.txt', 'r') as file:
@@ -17,7 +17,7 @@ while True:
             with open('todos.txt', 'w') as file:
                 todos = file.writelines(todos)
 
-    if 'show' in user_action:
+    elif 'show' in user_action:
             file = open('todos.txt', 'r')
             todos = file.readlines()
             file.close()
@@ -29,8 +29,8 @@ while True:
                 items = items.strip("\n")
                 row = f"{index+1}-{items}"
                 print(row)
-    if 'edit' in user_action:
-            number = int(input("Enter the To-Do to be edit: "))
+    elif 'edit' in user_action:
+            number = int(user_action[5:])
             number = number-1
 
             with open('todos.txt', 'r') as file:
@@ -42,8 +42,8 @@ while True:
             with open('todos.txt', 'w') as file:
                 todos = file.writelines(todos)
 
-    if 'complete' in user_action:
-            number = int(input("Number of the todo complete: "))
+    elif 'complete' in user_action:
+            number = int(user_action[9:])
 
             with open('todos.txt', 'r') as file:
                 todos = file.readlines()
@@ -56,8 +56,11 @@ while True:
             message = f"Todo {todo_to_remove} was removed from the list."
             print(message)
 
-    if 'exit' in user_action:
+    elif 'exit' in user_action:
             break
+    
+    else:
+         print("This command is not valid !")
     
     
 print("Bye!")
