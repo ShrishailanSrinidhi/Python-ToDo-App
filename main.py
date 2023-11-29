@@ -1,5 +1,10 @@
 from modules import functions
 # If functions were in same folder as main.py then we can use import function instead of from modules import functions. 
+import time
+
+now = time.strftime("%b %d, %Y %H:%M:%S")
+print("It is", now)
+
 
 while True:
     # Get choice from user whether user wants to add new item, show the list or exit the program
