@@ -11,3 +11,9 @@ def write_todos(todos_arg, filepath="todos.txt"):
     """
     with open(filepath, 'w') as file:
         file.writelines(todos_arg)
+
+
+# Below print statement will only run when function is run directly, not when it is imported and run from another
+# program.
+if __name__ == "__main__":
+    print("Hello from function!")
