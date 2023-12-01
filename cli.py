@@ -1,5 +1,5 @@
 from modules import functions
-# If functions were in same folder as main.py then we can use import function instead of from modules import functions. 
+# If functions were in same folder as cli.py then we can use import function instead of from modules import functions.
 import time
 
 now = time.strftime("%b %d, %Y %H:%M:%S")
